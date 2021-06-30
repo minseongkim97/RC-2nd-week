@@ -57,7 +57,7 @@ class DiaryViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if countButtonClicked % 3 == 0 && countButtonClicked != 0{
+        if countButtonClicked % 5 == 0 && countButtonClicked != 0{
             guard let adVC = storyboard?.instantiateViewController(withIdentifier: "AdViewController") as? AdViewController else { return }
             adVC.modalPresentationStyle = .fullScreen
             

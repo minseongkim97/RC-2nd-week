@@ -39,34 +39,7 @@ class DateViewController: UIViewController {
 //        print(diaryVC.diaryText)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("datevc will appear")
-        
-        let feelingAlert = UIAlertController(title: "행복", message: "행복", preferredStyle: .alert)
-        feelingAlert.addAction(UIAlertAction(title: "확인", style: .default))
-        
-        switch feeling[sectionIndex] {
-        case "happy":
-            feelingAlert.title = "행복"
-            feelingAlert.message = ""
-            present(feelingAlert, animated: true)
-        case "angry":
-            feelingAlert.title = "짜증"
-            feelingAlert.message = ""
-            present(feelingAlert, animated: true)
-        case "sad":
-            feelingAlert.title = "슬픔"
-            feelingAlert.message = ""
-            present(feelingAlert, animated: true)
-        case "soso":
-            feelingAlert.title = "쏘쏘"
-            feelingAlert.message = ""
-            present(feelingAlert, animated: true)
-        default:
-            print("선택x")
-        }
-    }
+
     
     //MARK: - Function
     func createToolbar() -> UIToolbar {
@@ -133,8 +106,6 @@ extension DateViewController: UITableViewDataSource {
         return cell
         
     }
-    
-    
 }
 
 extension DateViewController: UITableViewDelegate {
@@ -142,14 +113,12 @@ extension DateViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         dateTableView.deselectRow(at: indexPath, animated: true)
-        countButtonClicked += 1
-        print(countButtonClicked)
         
-        guard let diaryVC = storyboard?.instantiateViewController(withIdentifier: "DiaryViewController") as? DiaryViewController else { return }
-        diaryVC.modalPresentationStyle = .fullScreen
+        guard let selectVC = storyboard?.instantiateViewController(withIdentifier: "SelectViewController") as? SelectViewController else { return }
+        selectVC.modalPresentationStyle = .fullScreen
         
         sectionIndex = indexPath[0]
         
-        present(diaryVC, animated: true)
+        present(selectVC, animated: true)
     }
 }

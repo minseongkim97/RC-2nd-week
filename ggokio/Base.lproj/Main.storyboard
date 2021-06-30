@@ -23,6 +23,7 @@
                                     <constraint firstAttribute="width" constant="80" id="K2f-GS-RiZ"/>
                                     <constraint firstAttribute="height" constant="30" id="h8K-fu-CIu"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="날짜 추가">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17"/>
@@ -74,40 +75,91 @@
             </objects>
             <point key="canvasLocation" x="1015.9420289855074" y="83.705357142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Select View Controller-->
         <scene sceneID="jsK-2K-fay">
             <objects>
-                <viewController id="zW5-nH-itT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectViewController" id="zW5-nH-itT" customClass="SelectViewController" customModule="ggokio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tww-Db-lae">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCe-xV-tlw">
-                                <rect key="frame" x="85" y="502" width="245" height="160"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCe-xV-tlw">
+                                <rect key="frame" x="84.5" y="504" width="245" height="160"/>
                                 <color key="backgroundColor" red="0.64859361950000005" green="0.65933813819999998" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <state key="normal" title="DIARY">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="diaryButtonPressed:" destination="zW5-nH-itT" eventType="touchUpInside" id="J67-4P-ryc"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-kZ-Rzs">
-                                <rect key="frame" x="85" y="202" width="245" height="153"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-kZ-Rzs">
+                                <rect key="frame" x="85" y="204" width="244" height="150"/>
                                 <color key="backgroundColor" red="0.56034057790000003" green="0.700295903" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="ee8-Db-nQY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <state key="normal" title="TODO">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="dateButtonPressed:" destination="zW5-nH-itT" eventType="touchUpInside" id="SDR-mu-MM6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AqL-UZ-9pA">
+                                <rect key="frame" x="20" y="64" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NZn-KR-ZvF"/>
+                                    <constraint firstAttribute="width" constant="30" id="ajQ-iv-r1c"/>
+                                </constraints>
+                                <color key="tintColor" red="0.64859361950000005" green="0.65933813819999998" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="chevron.backward" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" weight="bold"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="zW5-nH-itT" eventType="touchUpInside" id="Llo-Tw-rRS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2rQ-5s-FSV"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2rQ-5s-FSV" firstAttribute="trailing" secondItem="TLN-kZ-Rzs" secondAttribute="trailing" constant="85" id="9fT-nt-3Dj"/>
+                            <constraint firstItem="KCe-xV-tlw" firstAttribute="height" secondItem="TLN-kZ-Rzs" secondAttribute="height" multiplier="1.06667" id="FaI-8z-92S"/>
+                            <constraint firstItem="TLN-kZ-Rzs" firstAttribute="leading" secondItem="2rQ-5s-FSV" secondAttribute="leading" constant="85" id="HhO-4N-2Nx"/>
+                            <constraint firstItem="KCe-xV-tlw" firstAttribute="centerX" secondItem="TLN-kZ-Rzs" secondAttribute="centerX" id="OMV-Pv-mRb"/>
+                            <constraint firstItem="KCe-xV-tlw" firstAttribute="width" secondItem="TLN-kZ-Rzs" secondAttribute="width" multiplier="1.0041" id="SCS-FI-wOR"/>
+                            <constraint firstItem="AqL-UZ-9pA" firstAttribute="top" secondItem="2rQ-5s-FSV" secondAttribute="top" constant="20" id="U3G-ru-Pl0"/>
+                            <constraint firstItem="TLN-kZ-Rzs" firstAttribute="top" secondItem="2rQ-5s-FSV" secondAttribute="top" constant="160" id="hb9-Y3-FQJ"/>
+                            <constraint firstItem="AqL-UZ-9pA" firstAttribute="leading" secondItem="2rQ-5s-FSV" secondAttribute="leading" constant="20" id="ona-7Y-Wtv"/>
+                            <constraint firstItem="KCe-xV-tlw" firstAttribute="top" secondItem="TLN-kZ-Rzs" secondAttribute="bottom" constant="150" id="pX9-5J-9mV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateButton" destination="TLN-kZ-Rzs" id="J55-B0-jrq"/>
+                        <outlet property="diaryButton" destination="KCe-xV-tlw" id="7Uw-fK-7rT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQG-fa-ZT7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2121.739130434783" y="83.705357142857139"/>
+        </scene>
+        <!--To Do View Controller-->
+        <scene sceneID="A0e-bu-Yxd">
+            <objects>
+                <viewController id="sYP-1t-WUM" customClass="ToDoViewController" customModule="ggokio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aZZ-fq-c3K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="IFC-Wi-qhg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1WN-2Q-i87" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3437" y="-152"/>
         </scene>
         <!--AdViewController-->
         <scene sceneID="Me0-gK-oyn">
@@ -175,6 +227,7 @@
                                     <constraint firstAttribute="height" constant="30" id="hzU-D9-kBg"/>
                                     <constraint firstAttribute="width" constant="50" id="i1O-aN-Iic"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="완료">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17"/>
@@ -225,7 +278,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">오마아갓Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhS-5s-PMK">
@@ -278,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvg-pi-HXZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3223" y="84"/>
+            <point key="canvasLocation" x="3446" y="534"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3lc-jj-FgT">
@@ -300,6 +353,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="광고3" width="350" height="250.5"/>
         <image name="슬픔" width="173" height="173"/>
