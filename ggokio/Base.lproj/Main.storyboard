@@ -11,7 +11,7 @@
         <!--Date View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DateViewController" customModule="ggokio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DateViewController" id="BYZ-38-t0r" customClass="DateViewController" customModule="ggokio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,6 +161,71 @@
             </objects>
             <point key="canvasLocation" x="3437" y="-152"/>
         </scene>
+        <!--Popup View Controller-->
+        <scene sceneID="c0u-Hc-ciW">
+            <objects>
+                <viewController storyboardIdentifier="PopupViewController" id="bvr-YI-1Cr" customClass="PopupViewController" customModule="ggokio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="utx-Iw-DkG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T89-dm-mtz">
+                                <rect key="frame" x="67.5" y="287.5" width="279" height="321"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9zI-dk-zGB">
+                                        <rect key="frame" x="14.5" y="143.5" width="250" height="34"/>
+                                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="4AV-TB-sF2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKk-i4-Alt">
+                                        <rect key="frame" x="240" y="0.0" width="39" height="38"/>
+                                        <color key="tintColor" red="0.50865155969999998" green="0.58081726499999997" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="checkmark.circle.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="33"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="checkButtonPressed:" destination="bvr-YI-1Cr" eventType="touchUpInside" id="TzL-Aq-LCm"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜를 선택해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aA-9N-5uG">
+                                        <rect key="frame" x="71" y="82.5" width="137" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="3aA-9N-5uG" firstAttribute="centerX" secondItem="T89-dm-mtz" secondAttribute="centerX" id="6za-AC-p0y"/>
+                                    <constraint firstItem="9zI-dk-zGB" firstAttribute="centerY" secondItem="T89-dm-mtz" secondAttribute="centerY" id="B1q-KT-yZw"/>
+                                    <constraint firstItem="9zI-dk-zGB" firstAttribute="centerX" secondItem="T89-dm-mtz" secondAttribute="centerX" id="D7U-m5-r8E"/>
+                                    <constraint firstAttribute="trailing" secondItem="bKk-i4-Alt" secondAttribute="trailing" id="GUv-Tf-Qh0"/>
+                                    <constraint firstAttribute="height" constant="321" id="P92-fE-C79"/>
+                                    <constraint firstItem="9zI-dk-zGB" firstAttribute="top" secondItem="3aA-9N-5uG" secondAttribute="bottom" constant="40" id="SEZ-zl-cWO"/>
+                                    <constraint firstAttribute="width" constant="279" id="Vv2-EV-kOS"/>
+                                    <constraint firstItem="bKk-i4-Alt" firstAttribute="top" secondItem="T89-dm-mtz" secondAttribute="top" id="oyf-7O-8au"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="S4O-AI-pIa"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.37124896523178808" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="T89-dm-mtz" firstAttribute="centerX" secondItem="utx-Iw-DkG" secondAttribute="centerX" id="Y3p-0q-4ju"/>
+                            <constraint firstItem="T89-dm-mtz" firstAttribute="centerY" secondItem="utx-Iw-DkG" secondAttribute="centerY" id="okU-2o-2wu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dateTextField" destination="9zI-dk-zGB" id="W35-YO-Sk4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tDU-wf-963" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1015.9420289855074" y="934.82142857142856"/>
+        </scene>
         <!--AdViewController-->
         <scene sceneID="Me0-gK-oyn">
             <objects>
@@ -204,7 +269,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IHh-cp-nv6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1621.7391304347827" y="764.73214285714278"/>
+            <point key="canvasLocation" x="2122" y="936"/>
         </scene>
         <!--Diary View Controller-->
         <scene sceneID="8jf-Vq-PNv">
@@ -353,6 +418,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <image name="광고3" width="350" height="250.5"/>
@@ -367,6 +433,9 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>

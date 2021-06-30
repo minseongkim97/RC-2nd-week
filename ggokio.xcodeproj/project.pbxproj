@@ -17,6 +17,7 @@
 		24501533268B00E300C39277 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24501532268B00E300C39277 /* DiaryViewController.swift */; };
 		24F0CD94268C08A00068C0EF /* AdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F0CD93268C08A00068C0EF /* AdViewController.swift */; };
 		24F0CD96268C6E6D0068C0EF /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F0CD95268C6E6D0068C0EF /* SelectViewController.swift */; };
+		24F0CD98268C7DF70068C0EF /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F0CD97268C7DF70068C0EF /* PopupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		24501532268B00E300C39277 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		24F0CD93268C08A00068C0EF /* AdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewController.swift; sourceTree = "<group>"; };
 		24F0CD95268C6E6D0068C0EF /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
+		24F0CD97268C7DF70068C0EF /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				24501512268AAAF200C39277 /* SceneDelegate.swift */,
 				24501514268AAAF200C39277 /* DateViewController.swift */,
 				24501516268AAAF200C39277 /* Main.storyboard */,
+				24F0CD97268C7DF70068C0EF /* PopupViewController.swift */,
 				24F0CD95268C6E6D0068C0EF /* SelectViewController.swift */,
 				24F0CD93268C08A00068C0EF /* AdViewController.swift */,
 				24501532268B00E300C39277 /* DiaryViewController.swift */,
@@ -153,6 +156,7 @@
 				24501533268B00E300C39277 /* DiaryViewController.swift in Sources */,
 				24501511268AAAF200C39277 /* AppDelegate.swift in Sources */,
 				24F0CD96268C6E6D0068C0EF /* SelectViewController.swift in Sources */,
+				24F0CD98268C7DF70068C0EF /* PopupViewController.swift in Sources */,
 				24F0CD94268C08A00068C0EF /* AdViewController.swift in Sources */,
 				24501513268AAAF200C39277 /* SceneDelegate.swift in Sources */,
 				2450152B268AAF5400C39277 /* ToDoViewController.swift in Sources */,
