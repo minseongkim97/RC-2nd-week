@@ -31,12 +31,13 @@ class SelectViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("datevc will appear")
+        print("selectvc will appear")
+        
         
         let feelingAlert = UIAlertController(title: "행복", message: "행복", preferredStyle: .alert)
         feelingAlert.addAction(UIAlertAction(title: "확인", style: .default))
         
-        switch feeling[sectionIndex] {
+        switch feeling[dateIndex] {
         case "happy":
             feelingAlert.title = "행복"
             feelingAlert.message = ""
@@ -58,9 +59,16 @@ class SelectViewController: UIViewController {
         }
     }
     
+
     //MARK: - Action
-    @IBAction func dateButtonPressed(_ sender: UIButton) {
+    @IBAction func todoButtonPressed(_ sender: UIButton) {
         countButtonClicked += 1
+        
+        guard let todoVC = storyboard?.instantiateViewController(withIdentifier: "ToDoViewController") as? ToDoViewController else { return }
+        todoVC.modalPresentationStyle = .fullScreen
+        
+        
+        present(todoVC, animated: true)
     }
     
     @IBAction func diaryButtonPressed(_ sender: UIButton) {
@@ -75,16 +83,6 @@ class SelectViewController: UIViewController {
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
         dismiss(animated: true)
-        feeling[sectionIndex] = ""
+        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -9,8 +9,17 @@ import UIKit
 
 class PopupViewController: UIViewController {
 
+    //MARK: - Property
+    @IBOutlet weak var popupView: UIView! {
+        didSet {
+            self.popupView.layer.cornerRadius = 20
+        }
+    }
+
+    
     @IBOutlet weak var dateTextField: UITextField!
     
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +36,8 @@ class PopupViewController: UIViewController {
         dateTextField.inputView = datePicker
     }
 
-    
+
+    //MARK: - Action
     @objc func datePickerValueChanged(sender: UIDatePicker) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy년 MM월 dd일"
@@ -35,7 +45,13 @@ class PopupViewController: UIViewController {
     }
     
     @IBAction func checkButtonPressed(_ sender: UIButton) {
+        dateList.append(dateTextField.text!)
+        toDoList[dateCount] = []
+        dateCount += 1
         dismiss(animated: true)
-
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true)
     }
 }

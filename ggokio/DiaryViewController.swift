@@ -7,7 +7,6 @@
 
 import UIKit
 
-public var sectionIndex: Int = 0
 
 class MyButton: UIButton {
     var isChecked: Bool = false
@@ -44,10 +43,10 @@ class DiaryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("diaryvc will appear")
-        diaryTextView.text = diaryText[sectionIndex]
+        diaryTextView.text = diaryText[dateIndex]
         
         for btn in Buttons {
-            if btn.currentTitle == feeling[sectionIndex] {
+            if btn.currentTitle == feeling[dateIndex] {
                 btn.backgroundColor = .systemIndigo
                 return
             }
@@ -74,22 +73,25 @@ class DiaryViewController: UIViewController {
             if btn.isChecked {
                 switch btn.currentTitle {
                 case "happy":
-                    feeling[sectionIndex] = "happy"
+                    feeling[dateIndex] = "happy"
                 case "angry":
-                    feeling[sectionIndex] = "angry"
+                    feeling[dateIndex] = "angry"
                 case "sad":
-                    feeling[sectionIndex] = "sad"
+                    feeling[dateIndex] = "sad"
                 case "soso":
-                    feeling[sectionIndex] = "soso"
+                    feeling[dateIndex] = "soso"
                 default:
                     print("선택x")
                 }
                 return
             }
         }
-
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+ 
+    }
     //MARK: - Action
     @IBAction func feelingButtonPressed(_ sender: UIButton) {
         for btn in Buttons {
@@ -105,7 +107,8 @@ class DiaryViewController: UIViewController {
     
     @IBAction func finishButtonPressed(_ sender: UIButton) {
         guard let dText = diaryTextView.text else { return }
-        diaryText[sectionIndex] = dText
+        diaryText[dateIndex] = dText
+        
         dismiss(animated: true)
  
     }

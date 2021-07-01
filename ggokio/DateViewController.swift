@@ -8,15 +8,19 @@
 import UIKit
 
 public var countButtonClicked: Int = 0
+public var dateIndex: Int = 0
+public var dateCount: Int = 0
 public var diaryText = [Int : String]()
+public var toDoList = [Int : [String]]()
 public var feeling = [Int : String]()
+public var dateList = [String]()
+
 
 class DateViewController: UIViewController {
 
     //MARK: - Property
-    var dateList = [String]()
+   
 
-    
     @IBOutlet weak var datePlusButton: UIButton! {
         didSet {
             self.datePlusButton.layer.cornerRadius = 15
@@ -36,12 +40,18 @@ class DateViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("datevc will appear")
+        dateTableView.reloadData()
+    }
 
     //MARK: - Action
     @IBAction func datePlusButtonPressed(_ sender: UIButton) {
         
         guard let popupVC = storyboard?.instantiateViewController(withIdentifier: "PopupViewController") as? PopupViewController else { return }
-        popupVC.modalPresentationStyle = .overCurrentContext
+        popupVC.modalPresentationStyle = .fullScreen
         present(popupVC, animated: false)
 //        let datePickAlert = UIAlertController(title: "Date", message: "날짜를 선택해주세요", preferredStyle: .alert)
 //        var textField = UITextField()
@@ -87,7 +97,7 @@ extension DateViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = dateTableView.dequeueReusableCell(withIdentifier: "DateTableViewCell", for: indexPath)
-        cell.textLabel?.text = self.dateList[indexPath.section]
+        cell.textLabel?.text = dateList[indexPath.section]
         return cell
         
     }
@@ -102,8 +112,7 @@ extension DateViewController: UITableViewDelegate {
         guard let selectVC = storyboard?.instantiateViewController(withIdentifier: "SelectViewController") as? SelectViewController else { return }
         selectVC.modalPresentationStyle = .fullScreen
         
-        sectionIndex = indexPath[0]
-        
+        dateIndex = indexPath[0]
         present(selectVC, animated: true)
     }
 }
