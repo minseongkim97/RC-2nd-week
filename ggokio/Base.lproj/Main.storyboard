@@ -276,10 +276,15 @@
                                             <action selector="cancelButtonPressed:" destination="bvr-YI-1Cr" eventType="touchUpInside" id="MX1-85-eKY"/>
                                         </connections>
                                     </button>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="oLG-Es-eEp">
+                                        <rect key="frame" x="0.0" y="187" width="279" height="134"/>
+                                    </datePicker>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="oLG-Es-eEp" firstAttribute="leading" secondItem="T89-dm-mtz" secondAttribute="leading" id="5HW-LG-fKp"/>
                                     <constraint firstItem="3aA-9N-5uG" firstAttribute="centerX" secondItem="T89-dm-mtz" secondAttribute="centerX" id="6za-AC-p0y"/>
+                                    <constraint firstAttribute="trailing" secondItem="oLG-Es-eEp" secondAttribute="trailing" id="8to-pp-hzE"/>
                                     <constraint firstItem="9zI-dk-zGB" firstAttribute="centerY" secondItem="T89-dm-mtz" secondAttribute="centerY" id="B1q-KT-yZw"/>
                                     <constraint firstItem="9zI-dk-zGB" firstAttribute="centerX" secondItem="T89-dm-mtz" secondAttribute="centerX" id="D7U-m5-r8E"/>
                                     <constraint firstItem="NU6-1G-g4K" firstAttribute="centerY" secondItem="bKk-i4-Alt" secondAttribute="centerY" id="FjR-dF-GsE"/>
@@ -289,18 +294,21 @@
                                     <constraint firstItem="9zI-dk-zGB" firstAttribute="top" secondItem="3aA-9N-5uG" secondAttribute="bottom" constant="40" id="SEZ-zl-cWO"/>
                                     <constraint firstAttribute="width" constant="279" id="Vv2-EV-kOS"/>
                                     <constraint firstItem="NU6-1G-g4K" firstAttribute="leading" secondItem="T89-dm-mtz" secondAttribute="leading" constant="10" id="dRm-HU-f3l"/>
+                                    <constraint firstItem="oLG-Es-eEp" firstAttribute="top" secondItem="9zI-dk-zGB" secondAttribute="bottom" constant="10" id="mGd-XB-8dS"/>
                                     <constraint firstItem="bKk-i4-Alt" firstAttribute="top" secondItem="T89-dm-mtz" secondAttribute="top" constant="10" id="oyf-7O-8au"/>
+                                    <constraint firstAttribute="bottom" secondItem="oLG-Es-eEp" secondAttribute="bottom" id="s5A-jT-Xbh"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="S4O-AI-pIa"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="T89-dm-mtz" firstAttribute="centerX" secondItem="utx-Iw-DkG" secondAttribute="centerX" id="Y3p-0q-4ju"/>
                             <constraint firstItem="T89-dm-mtz" firstAttribute="centerY" secondItem="utx-Iw-DkG" secondAttribute="centerY" id="okU-2o-2wu"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="datePicker" destination="oLG-Es-eEp" id="MWk-XJ-CsV"/>
                         <outlet property="dateTextField" destination="9zI-dk-zGB" id="W35-YO-Sk4"/>
                         <outlet property="popupView" destination="T89-dm-mtz" id="pMs-e3-9Kb"/>
                     </connections>

@@ -52,33 +52,7 @@ class DateViewController: UIViewController {
         
         guard let popupVC = storyboard?.instantiateViewController(withIdentifier: "PopupViewController") as? PopupViewController else { return }
         popupVC.modalPresentationStyle = .fullScreen
-        present(popupVC, animated: false)
-//        let datePickAlert = UIAlertController(title: "Date", message: "날짜를 선택해주세요", preferredStyle: .alert)
-//        var textField = UITextField()
-//
-//        datePickAlert.addTextField { field in
-//            textField = field
-//            textField.placeholder = "날짜 선택"
-//        }
-//
-//
-//        datePickAlert.addAction(UIAlertAction(title: "취소", style: .default))
-//        datePickAlert.addAction(UIAlertAction(title: "추가", style: .default, handler: { _ in
-//
-//            if let text = textField.text, !text.isEmpty {
-//
-//                DispatchQueue.main.async {
-//                    self.dateList.append(text)
-//                    self.dateTableView.reloadData()
-//                }
-//            }
-//
-//        }))
-//
-//        present(datePickAlert, animated: true)
-//
-
-        
+        present(popupVC, animated: false)        
     }
 }
     

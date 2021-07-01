@@ -18,6 +18,7 @@ class PopupViewController: UIViewController {
 
     
     @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -28,12 +29,9 @@ class PopupViewController: UIViewController {
         formatter.dateFormat = "yyyy년 MM월 dd일"
         dateTextField.text = formatter.string(from: date)
         
-        let datePicker = UIDatePicker()
-       
-        datePicker.datePickerMode = .date
         datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: .valueChanged)
-        datePicker.frame.size = CGSize(width: 0, height: 250)
-        dateTextField.inputView = datePicker
+        
+        
     }
 
 
