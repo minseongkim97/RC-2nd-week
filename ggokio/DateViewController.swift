@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import UserNotifications
 
 public var countButtonClicked: Int = 0
 public var dateIndex: Int = 0
 public var dateCount: Int = 0
 public var diaryText = [Int : String]()
-public var toDoList = [Int : [String]]()
+public var toDoList = [Int : [ToDoItem]]()
+public var undoList = [Int : [String]]()
 public var feeling = [Int : String]()
 public var dateList = [String]()
 
@@ -34,12 +36,13 @@ class DateViewController: UIViewController {
         }
     }
     
-
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UNUserNotificationCenter.current().delegate = self
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -47,12 +50,15 @@ class DateViewController: UIViewController {
         dateTableView.reloadData()
     }
 
+    //MARK: - Function
+
+    
     //MARK: - Action
     @IBAction func datePlusButtonPressed(_ sender: UIButton) {
         
         guard let popupVC = storyboard?.instantiateViewController(withIdentifier: "PopupViewController") as? PopupViewController else { return }
         popupVC.modalPresentationStyle = .fullScreen
-        present(popupVC, animated: false)        
+        present(popupVC, animated: false)
     }
 }
     
@@ -88,5 +94,18 @@ extension DateViewController: UITableViewDelegate {
         
         dateIndex = indexPath[0]
         present(selectVC, animated: true)
+    }
+}
+
+extension DateViewController: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound, .badge])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
+        let settingsViewController = UIViewController()
+        settingsViewController.view.backgroundColor = .yellow
+        self.present(settingsViewController, animated: true)
     }
 }

@@ -7,6 +7,11 @@
 
 import UIKit
 
+public struct ToDoItem {
+    var title: String = ""
+    var isChecked: Bool = false
+}
+
 class ToDoViewController: UIViewController {
 
     //MARK: - Property
@@ -16,20 +21,49 @@ class ToDoViewController: UIViewController {
             self.toDoTableView.delegate = self
         }
     }
-    
-    var todoList = [String]()
+    @IBOutlet weak var plusButton: UIButton! {
+        didSet {
+            self.plusButton.layer.cornerRadius = 15
+        }
+    }
+    @IBOutlet weak var finishButton: UIButton! {
+        didSet {
+            self.finishButton.layer.cornerRadius = 15
+        }
+    }
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        undoList[dateIndex] = []
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print(toDoList[dateIndex]!)
-  
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if countButtonClicked % 5 == 0 && countButtonClicked != 0{
+            guard let adVC = storyboard?.instantiateViewController(withIdentifier: "AdViewController") as? AdViewController else { return }
+            adVC.modalPresentationStyle = .fullScreen
+            
+            present(adVC, animated: false)
+            countButtonClicked = 0
+        }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        for toDoItem in toDoList[dateIndex]! {
+            if toDoItem.isChecked == false {
+                undoList[dateIndex]!.append(toDoItem.title)
+            }
+        }
+        
+        print(undoList)
+    }
+    
     //MARK: - Action
     @IBAction func plusButtonPressed(_ sender: UIButton) {
         
@@ -41,8 +75,9 @@ class ToDoViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "추가", style: .default, handler: { _ in
             if let field = alert.textFields?.first {
                 if let text = field.text, !text.isEmpty {
-                    
-                    toDoList[dateIndex]!.append(text)
+                    var toDoItem = ToDoItem()
+                    toDoItem.title = text
+                    toDoList[dateIndex]!.append(toDoItem)
                     DispatchQueue.main.async {
                         self.toDoTableView.reloadData()
                     }
@@ -71,7 +106,12 @@ extension ToDoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = toDoTableView.dequeueReusableCell(withIdentifier: "ToDoTableViewCell", for: indexPath)
-        cell.textLabel?.text = toDoList[dateIndex]![indexPath.row]
+        cell.textLabel?.text = toDoList[dateIndex]![indexPath.row].title
+        if toDoList[dateIndex]![indexPath.row].isChecked {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
         return cell
     }
 }
@@ -81,5 +121,13 @@ extension ToDoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         toDoTableView.deselectRow(at: indexPath, animated: true)
         
+        DispatchQueue.main.async {
+            if toDoList[dateIndex]![indexPath.row].isChecked {
+                toDoList[dateIndex]![indexPath.row].isChecked = false
+            } else {
+                toDoList[dateIndex]![indexPath.row].isChecked = true
+            }
+            self.toDoTableView.reloadData()
+        }
     }
 }

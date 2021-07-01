@@ -41,7 +41,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="20" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="rYE-4L-tev">
                                 <rect key="frame" x="0.0" y="148" width="414" height="748"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DateTableViewCell" id="YQ5-R0-AQu" customClass="DateTableViewCell" customModule="ggokio" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DateTableViewCell" id="YQ5-R0-AQu">
                                         <rect key="frame" x="20" y="49.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YQ5-R0-AQu" id="OOj-9B-HNI">
@@ -83,31 +83,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCe-xV-tlw">
-                                <rect key="frame" x="84.5" y="504" width="245" height="160"/>
-                                <color key="backgroundColor" red="0.64859361950000005" green="0.65933813819999998" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <state key="normal" title="DIARY">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="diaryButtonPressed:" destination="zW5-nH-itT" eventType="touchUpInside" id="J67-4P-ryc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-kZ-Rzs">
-                                <rect key="frame" x="85" y="204" width="244" height="150"/>
-                                <color key="backgroundColor" red="0.56034057790000003" green="0.700295903" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="ee8-Db-nQY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <state key="normal" title="TODO">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="todoButtonPressed:" destination="zW5-nH-itT" eventType="touchUpInside" id="SDR-mu-MM6"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="0nR-3o-ujN">
+                                <rect key="frame" x="82" y="273" width="250" height="350"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-kZ-Rzs">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="150"/>
+                                        <color key="backgroundColor" red="0.56034057790000003" green="0.700295903" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="LQQ-y4-b8b"/>
+                                            <constraint firstAttribute="height" constant="150" id="Rpt-b8-Y17"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <state key="normal" title="TODO">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="todoButtonPressed:" destination="zW5-nH-itT" eventType="touchUpInside" id="SDR-mu-MM6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCe-xV-tlw">
+                                        <rect key="frame" x="0.0" y="200" width="250" height="150"/>
+                                        <color key="backgroundColor" red="0.64859361950000005" green="0.65933813819999998" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <state key="normal" title="DIARY">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="diaryButtonPressed:" destination="zW5-nH-itT" eventType="touchUpInside" id="J67-4P-ryc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AqL-UZ-9pA">
                                 <rect key="frame" x="20" y="64" width="30" height="30"/>
                                 <constraints>
@@ -126,15 +132,10 @@
                         <viewLayoutGuide key="safeArea" id="2rQ-5s-FSV"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2rQ-5s-FSV" firstAttribute="trailing" secondItem="TLN-kZ-Rzs" secondAttribute="trailing" constant="85" id="9fT-nt-3Dj"/>
-                            <constraint firstItem="KCe-xV-tlw" firstAttribute="height" secondItem="TLN-kZ-Rzs" secondAttribute="height" multiplier="1.06667" id="FaI-8z-92S"/>
-                            <constraint firstItem="TLN-kZ-Rzs" firstAttribute="leading" secondItem="2rQ-5s-FSV" secondAttribute="leading" constant="85" id="HhO-4N-2Nx"/>
-                            <constraint firstItem="KCe-xV-tlw" firstAttribute="centerX" secondItem="TLN-kZ-Rzs" secondAttribute="centerX" id="OMV-Pv-mRb"/>
-                            <constraint firstItem="KCe-xV-tlw" firstAttribute="width" secondItem="TLN-kZ-Rzs" secondAttribute="width" multiplier="1.0041" id="SCS-FI-wOR"/>
+                            <constraint firstItem="0nR-3o-ujN" firstAttribute="centerY" secondItem="Tww-Db-lae" secondAttribute="centerY" id="B0z-iQ-fj6"/>
                             <constraint firstItem="AqL-UZ-9pA" firstAttribute="top" secondItem="2rQ-5s-FSV" secondAttribute="top" constant="20" id="U3G-ru-Pl0"/>
-                            <constraint firstItem="TLN-kZ-Rzs" firstAttribute="top" secondItem="2rQ-5s-FSV" secondAttribute="top" constant="160" id="hb9-Y3-FQJ"/>
+                            <constraint firstItem="0nR-3o-ujN" firstAttribute="centerX" secondItem="Tww-Db-lae" secondAttribute="centerX" id="ms7-jw-p4I"/>
                             <constraint firstItem="AqL-UZ-9pA" firstAttribute="leading" secondItem="2rQ-5s-FSV" secondAttribute="leading" constant="20" id="ona-7Y-Wtv"/>
-                            <constraint firstItem="KCe-xV-tlw" firstAttribute="top" secondItem="TLN-kZ-Rzs" secondAttribute="bottom" constant="150" id="pX9-5J-9mV"/>
                         </constraints>
                     </view>
                     <connections>
@@ -180,11 +181,11 @@
                                 <rect key="frame" x="0.0" y="124" width="414" height="772"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ToDoTableViewCell" id="0bQ-NG-viu">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoTableViewCell" id="0bQ-NG-viu">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0bQ-NG-viu" id="5Ld-xD-MDt">
-                                            <rect key="frame" x="0.0" y="0.0" width="373.5" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -223,6 +224,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="finishButton" destination="iBa-Gw-c3S" id="byw-qG-qUA"/>
+                        <outlet property="plusButton" destination="za8-M1-icK" id="9lv-d5-4lT"/>
                         <outlet property="toDoTableView" destination="Zon-qe-Fj7" id="WWd-LV-dwC"/>
                     </connections>
                 </viewController>
@@ -277,7 +280,7 @@
                                         </connections>
                                     </button>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="oLG-Es-eEp">
-                                        <rect key="frame" x="0.0" y="187" width="279" height="134"/>
+                                        <rect key="frame" x="0.0" y="187.5" width="279" height="133.5"/>
                                     </datePicker>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

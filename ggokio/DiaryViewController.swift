@@ -60,7 +60,7 @@ class DiaryViewController: UIViewController {
             guard let adVC = storyboard?.instantiateViewController(withIdentifier: "AdViewController") as? AdViewController else { return }
             adVC.modalPresentationStyle = .fullScreen
             
-            present(adVC, animated: true)
+            present(adVC, animated: false)
             countButtonClicked = 0
         }
     }
@@ -88,10 +88,6 @@ class DiaryViewController: UIViewController {
         }
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
- 
-    }
     //MARK: - Action
     @IBAction func feelingButtonPressed(_ sender: UIButton) {
         for btn in Buttons {

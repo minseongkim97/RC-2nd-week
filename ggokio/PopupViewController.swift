@@ -45,6 +45,7 @@ class PopupViewController: UIViewController {
     @IBAction func checkButtonPressed(_ sender: UIButton) {
         dateList.append(dateTextField.text!)
         toDoList[dateCount] = []
+        undoList[dateCount] = []
         dateCount += 1
         dismiss(animated: true)
     }

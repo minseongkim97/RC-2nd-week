@@ -33,29 +33,37 @@ class SelectViewController: UIViewController {
         super.viewWillAppear(animated)
         print("selectvc will appear")
         
-        
-        let feelingAlert = UIAlertController(title: "행복", message: "행복", preferredStyle: .alert)
-        feelingAlert.addAction(UIAlertAction(title: "확인", style: .default))
-        
+        let toDoAlert = UIAlertController(title: "남아있는 일", message: "\(undoList[dateIndex]!)", preferredStyle: .alert)
+        toDoAlert.addAction(UIAlertAction(title: "확인", style: .default))
+
         switch feeling[dateIndex] {
         case "happy":
-            feelingAlert.title = "행복"
-            feelingAlert.message = ""
-            present(feelingAlert, animated: true)
+            toDoAlert.message = """
+\(undoList[dateIndex]!)
+오늘의 기분 : 행복
+"""
+            present(toDoAlert, animated: true)
         case "angry":
-            feelingAlert.title = "짜증"
-            feelingAlert.message = ""
-            present(feelingAlert, animated: true)
+            toDoAlert.message = """
+\(undoList[dateIndex]!)
+오늘의 기분 : 짜증
+"""
+            present(toDoAlert, animated: true)
         case "sad":
-            feelingAlert.title = "슬픔"
-            feelingAlert.message = ""
-            present(feelingAlert, animated: true)
+            toDoAlert.message = """
+\(undoList[dateIndex]!)
+오늘의 기분 : 슬픔
+"""
+            present(toDoAlert, animated: true)
         case "soso":
-            feelingAlert.title = "쏘쏘"
-            feelingAlert.message = ""
-            present(feelingAlert, animated: true)
+            toDoAlert.message = """
+\(undoList[dateIndex]!)
+오늘의 기분 : 쏘쏘
+"""
+            present(toDoAlert, animated: true)
         default:
             print("선택x")
+            present(toDoAlert, animated: true)
         }
     }
     
