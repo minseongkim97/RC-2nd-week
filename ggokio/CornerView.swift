@@ -13,3 +13,10 @@ class CornerButton: UIButton {
         self.layer.cornerRadius = self.frame.size.height / 2
     }
 }
+
+class CornerView: UIView {
+    override func draw(_ rect: CGRect) {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = self.frame.size.height / 10
+    }
+}

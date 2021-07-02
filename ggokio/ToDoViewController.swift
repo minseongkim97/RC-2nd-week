@@ -23,12 +23,12 @@ class ToDoViewController: UIViewController {
     }
     @IBOutlet weak var plusButton: UIButton! {
         didSet {
-            self.plusButton.layer.cornerRadius = 15
+//            self.plusButton.layer.cornerRadius = 15
         }
     }
     @IBOutlet weak var finishButton: UIButton! {
         didSet {
-            self.finishButton.layer.cornerRadius = 15
+//            self.finishButton.layer.cornerRadius = 15
         }
     }
     

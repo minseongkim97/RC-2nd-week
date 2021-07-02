@@ -18,13 +18,13 @@ class DiaryViewController: UIViewController {
 
     @IBOutlet weak var finishButton: UIButton! {
         didSet {
-            self.finishButton.layer.cornerRadius = 15
+//            self.finishButton.layer.cornerRadius = 15
         }
     }
     
     @IBOutlet weak var roundView: UIView! {
         didSet {
-            self.roundView.layer.cornerRadius = 15
+//            self.roundView.layer.cornerRadius = 15
         }
     }
     

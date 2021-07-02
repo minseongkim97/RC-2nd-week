@@ -12,7 +12,7 @@ class PopupViewController: UIViewController {
     //MARK: - Property
     @IBOutlet weak var popupView: UIView! {
         didSet {
-            self.popupView.layer.cornerRadius = 20
+//            self.popupView.layer.cornerRadius = 20
         }
     }
 
