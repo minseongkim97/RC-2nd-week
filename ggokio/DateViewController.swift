@@ -40,7 +40,6 @@ class DateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UNUserNotificationCenter.current().delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,9 +96,3 @@ extension DateViewController: UITableViewDelegate {
     }
 }
 
-extension DateViewController: UNUserNotificationCenterDelegate {
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.list, .banner, .sound, .badge])
-    }
-}

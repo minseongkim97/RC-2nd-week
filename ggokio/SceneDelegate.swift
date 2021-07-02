@@ -33,7 +33,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let updateTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
 
-        let request = UNNotificationRequest(identifier: "update", content: updateContent, trigger: updateTrigger)
+        let request = UNNotificationRequest(identifier: "update",
+                                            content: updateContent,
+                                            trigger: updateTrigger)
 
         center.add(request) { error in
             if let error = error {
@@ -53,7 +55,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let evalTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
 
-        let request = UNNotificationRequest(identifier: "evaluate", content: evalContent, trigger: evalTrigger )
+        let request = UNNotificationRequest(identifier: "evaluate",
+                                            content: evalContent,
+                                            trigger: evalTrigger )
 
         center.add(request) { error in
             if let error = error {

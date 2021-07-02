@@ -60,7 +60,7 @@ class DiaryViewController: UIViewController {
             guard let adVC = storyboard?.instantiateViewController(withIdentifier: "AdViewController") as? AdViewController else { return }
             adVC.modalPresentationStyle = .fullScreen
             
-            present(adVC, animated: false)
+            present(adVC, animated: true)
             countButtonClicked = 0
         }
     }
