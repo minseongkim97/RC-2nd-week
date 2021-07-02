@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240DBC87268EB66B00A0DEB0 /* CornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240DBC86268EB66B00A0DEB0 /* CornerButton.swift */; };
 		24501511268AAAF200C39277 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24501510268AAAF200C39277 /* AppDelegate.swift */; };
 		24501513268AAAF200C39277 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24501512268AAAF200C39277 /* SceneDelegate.swift */; };
 		24501515268AAAF200C39277 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24501514268AAAF200C39277 /* DateViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		240DBC86268EB66B00A0DEB0 /* CornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerButton.swift; sourceTree = "<group>"; };
 		2450150D268AAAF200C39277 /* ggokio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ggokio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24501510268AAAF200C39277 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24501512268AAAF200C39277 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				24501510268AAAF200C39277 /* AppDelegate.swift */,
 				24501512268AAAF200C39277 /* SceneDelegate.swift */,
+				240DBC86268EB66B00A0DEB0 /* CornerButton.swift */,
 				24501514268AAAF200C39277 /* DateViewController.swift */,
 				24501516268AAAF200C39277 /* Main.storyboard */,
 				24F0CD97268C7DF70068C0EF /* PopupViewController.swift */,
@@ -154,6 +157,7 @@
 			files = (
 				24501515268AAAF200C39277 /* DateViewController.swift in Sources */,
 				24501533268B00E300C39277 /* DiaryViewController.swift in Sources */,
+				240DBC87268EB66B00A0DEB0 /* CornerButton.swift in Sources */,
 				24501511268AAAF200C39277 /* AppDelegate.swift in Sources */,
 				24F0CD96268C6E6D0068C0EF /* SelectViewController.swift in Sources */,
 				24F0CD98268C7DF70068C0EF /* PopupViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 import UIKit
 
 
-class MyButton: UIButton {
+class MyButton: CornerButton {
     var isChecked: Bool = false
 }
 

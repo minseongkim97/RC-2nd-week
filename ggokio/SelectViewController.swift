@@ -12,13 +12,13 @@ class SelectViewController: UIViewController {
     //MARK: - Property
     @IBOutlet weak var dateButton: UIButton! {
         didSet {
-            self.dateButton.layer.cornerRadius = 20
+//            self.dateButton.layer.cornerRadius = 20
         }
     }
     
     @IBOutlet weak var diaryButton: UIButton! {
         didSet {
-            self.diaryButton.layer.cornerRadius = 20
+//            self.diaryButton.layer.cornerRadius = 20
         }
     }
     

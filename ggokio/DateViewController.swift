@@ -25,7 +25,7 @@ class DateViewController: UIViewController {
 
     @IBOutlet weak var datePlusButton: UIButton! {
         didSet {
-            self.datePlusButton.layer.cornerRadius = 15
+//            self.datePlusButton.layer.cornerRadius = 15
         }
     }
     

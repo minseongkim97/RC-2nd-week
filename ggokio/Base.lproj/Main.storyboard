@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iP-dr-T0Y">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iP-dr-T0Y" customClass="CornerButton" customModule="ggokio" customModuleProvider="target">
                                 <rect key="frame" x="314" y="108" width="80" height="30"/>
                                 <color key="backgroundColor" red="0.648593619457142" green="0.65933813820261111" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -86,7 +86,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="0nR-3o-ujN">
                                 <rect key="frame" x="82" y="273" width="250" height="350"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-kZ-Rzs">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-kZ-Rzs" customClass="CornerButton" customModule="ggokio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="150"/>
                                         <color key="backgroundColor" red="0.56034057790000003" green="0.700295903" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -101,7 +101,7 @@
                                             <action selector="todoButtonPressed:" destination="zW5-nH-itT" eventType="touchUpInside" id="SDR-mu-MM6"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCe-xV-tlw">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCe-xV-tlw" customClass="CornerButton" customModule="ggokio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="200" width="250" height="150"/>
                                         <color key="backgroundColor" red="0.64859361950000005" green="0.65933813819999998" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
@@ -161,7 +161,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBa-Gw-c3S">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBa-Gw-c3S" customClass="CornerButton" customModule="ggokio" customModuleProvider="target">
                                 <rect key="frame" x="344" y="64" width="50" height="30"/>
                                 <color key="backgroundColor" red="0.64859361950000005" green="0.65933813819999998" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -191,7 +191,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="za8-M1-icK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="za8-M1-icK" customClass="CornerButton" customModule="ggokio" customModuleProvider="target">
                                 <rect key="frame" x="20" y="64" width="50" height="30"/>
                                 <color key="backgroundColor" red="0.56034057790000003" green="0.700295903" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -379,7 +379,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0C-AS-UZE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0C-AS-UZE" customClass="CornerButton" customModule="ggokio" customModuleProvider="target">
                                 <rect key="frame" x="344" y="64" width="50" height="30"/>
                                 <color key="backgroundColor" red="0.64859361950000005" green="0.65933813819999998" blue="0.8078432083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
