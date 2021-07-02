@@ -38,28 +38,37 @@ class SelectViewController: UIViewController {
 
         switch feeling[dateIndex] {
         case "happy":
-            toDoAlert.message = """
-\(undoList[dateIndex]!)
-오늘의 기분 : 행복
-"""
+            toDoAlert.title = """
+                오늘의 기분 : 행복
+                
+                남아있는 일
+                """
+            toDoAlert.message = "\(undoList[dateIndex]!)"
+
             present(toDoAlert, animated: true)
         case "angry":
-            toDoAlert.message = """
-\(undoList[dateIndex]!)
-오늘의 기분 : 짜증
-"""
+            toDoAlert.title = """
+                오늘의 기분 : 짜증
+                
+                남아있는 일
+                """
+            toDoAlert.message = "\(undoList[dateIndex]!)"
             present(toDoAlert, animated: true)
         case "sad":
-            toDoAlert.message = """
-\(undoList[dateIndex]!)
-오늘의 기분 : 슬픔
-"""
+            toDoAlert.title = """
+                오늘의 기분 : 슬픔
+                
+                남아있는 일
+                """
+            toDoAlert.message = "\(undoList[dateIndex]!)"
             present(toDoAlert, animated: true)
         case "soso":
-            toDoAlert.message = """
-\(undoList[dateIndex]!)
-오늘의 기분 : 쏘쏘
-"""
+            toDoAlert.title = """
+                오늘의 기분 : 쏘쏘
+                
+                남아있는 일
+                """
+            toDoAlert.message = "\(undoList[dateIndex]!)"
             present(toDoAlert, animated: true)
         default:
             print("선택x")

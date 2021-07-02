@@ -100,12 +100,6 @@ extension DateViewController: UITableViewDelegate {
 extension DateViewController: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound, .badge])
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
-        let settingsViewController = UIViewController()
-        settingsViewController.view.backgroundColor = .yellow
-        self.present(settingsViewController, animated: true)
+        completionHandler([.list, .banner, .sound, .badge])
     }
 }

@@ -11,7 +11,8 @@ import UserNotifications
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
+    let center = UNUserNotificationCenter.current()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
@@ -24,7 +25,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
         }
         
-        let updateCenter = UNUserNotificationCenter.current()
 
 
         let updateContent = UNMutableNotificationContent()
@@ -35,7 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let request = UNNotificationRequest(identifier: "update", content: updateContent, trigger: updateTrigger)
 
-        updateCenter.add(request) { error in
+        center.add(request) { error in
             if let error = error {
                 print(error)
             }
@@ -45,9 +45,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidDisconnect(_ scene: UIScene) {
         print("did disconnect")
-        
-        let evalCenter = UNUserNotificationCenter.current()
-
 
         let evalContent = UNMutableNotificationContent()
         evalContent.title = "오늘은 어떠셨나요?"
@@ -58,7 +55,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let request = UNNotificationRequest(identifier: "evaluate", content: evalContent, trigger: evalTrigger )
 
-        evalCenter.add(request) { error in
+        center.add(request) { error in
             if let error = error {
                 print(error)
             }
